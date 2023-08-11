@@ -6,6 +6,10 @@ growpart /dev/vda 2
 pvresize /dev/vda2
 pvs
 vgs
+resize2fs /dev/vda1
+----
+
+
 df -hT | grep mapper
 lvextend -l +100%FREE /dev/mapper/rhel-root
 xfs_growfs /
